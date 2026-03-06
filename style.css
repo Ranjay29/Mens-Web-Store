@@ -1,0 +1,336 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+    --black: #0e0e0e;
+    --charcoal: #1a1a1a;
+    --ivory: #f5f5f2;
+    --platinum: #dadada;
+    --shadow-soft: rgba(0, 0, 0, 0.4);
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    scroll-behavior: smooth;
+}
+/* Navbar */
+.navbar {
+    background:linear-gradient(to left,rgba(14, 14, 14, 0.87),rgba(2, 2, 2, 0.541),rgba(14, 14, 14, 0.87));
+    backdrop-filter: blur(6px);
+}
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+}
+.nav-link {
+    color: var(--ivory) !important;
+    margin-left: 20px;
+    position: relative;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background: var(--platinum);
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+/* Hero Section */
+.hero {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+.hero> video {
+    width: 110%;
+}
+.hero>.container {
+    max-width: 100%;
+    height: 100vh;
+    text-align: center;
+    padding-top: 250px;
+    position: absolute;
+}
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    text-shadow: -2px 2px 10px black;
+    color: white;
+    font-size: 5rem;
+    letter-spacing: 2px;
+}
+.hero p {
+    color: var(--platinum);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    margin: 20px 0;
+}
+.hero .btn {
+    border: 1px solid var(--platinum);
+    color: var(--ivory);
+    padding: 12px 35px;
+    border-radius: 0;
+    transition: 0.4s;
+}
+.hero .btn:hover {
+    background: var(--ivory);
+    color: var(--black);
+}
+/* Sections */
+.section {
+    padding: 30px 0;
+}
+.section h2 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+/* About Image */
+#about> .container {
+    padding-top: 40px;
+}
+#about img {
+    box-shadow: 0 25px 60px var(--shadow-soft);
+}
+.img-fluid {
+    width: 350px;
+}
+/* Products */
+#products> .container {
+    margin-top: 40px;
+}
+.bg-light {
+    background: var(--charcoal) !important;
+    color: white;
+}
+.container> h2 {
+    font-size: 3rem;
+}
+.product-card {
+    background: var(--black);
+    border: none;
+    box-shadow: 0 20px 50px var(--shadow-soft);
+    transition: 0.4s;
+}
+.product-card img {
+    height: 380px;
+    object-fit: cover;
+}
+.product-card:hover {
+    transform: translateY(-12px);
+}
+.product-card h5 {
+    font-family: 'Playfair Display', serif;
+    color: white; 
+}
+.product-card p {
+    color: rgb(192, 192, 192);
+}
+.product-card .btn {
+    border: 1px solid var(--platinum);
+    color: var(--ivory);
+    border-radius: 0;
+}
+.product-card .btn:hover {
+    background: var(--ivory);
+    color: var(--black);
+}
+/* Feedback */
+#feedback p {
+    font-style: italic;
+    font-size: larger;
+    color: rgba(0, 0, 0, 0.808);
+    justify-content: space-between;
+}
+/* Contact */
+#contact {
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.048),
+        rgba(0, 0, 0, 0.062),
+        rgba(0, 0, 0, 0.74), black
+    ),
+    url('https://images.pexels.com/photos/298864/pexels-photo-298864.jpeg') center/cover;
+}
+.form-control {
+    background: transparent;
+    border: 1px solid var(--platinum);
+    color: white;
+    border-radius: 0;
+}
+.form-control::placeholder {
+    color: rgb(158, 158, 158);
+}
+.form-control:focus {
+    background: black;
+    color: white;
+    box-shadow: none;
+    border-color: var(--ivory);
+}
+#contact .btn {
+    border-radius: 0;
+}
+/* Footer */
+footer {
+    background: #000;
+    color: var(--platinum);
+    font-size: 0.9rem;
+}
+
+/* Featured Slider */
+.slider-section { padding-top: 60px; padding-bottom: 60px; }
+.slider { position: relative; display: flex; align-items: center; gap: 10px; }
+.slider-track { display: flex; align-items: center; gap: 18px; overflow: hidden; width: 100%; padding: 20px 10px; }
+.slide { flex: 0 0 48%; max-width: 48%; transition: transform 450ms cubic-bezier(.2,.9,.2,1), filter 450ms, opacity 450ms; position: relative; border-radius: 8px; overflow: hidden; box-shadow: 0 18px 50px rgba(2,2,2,0.45); cursor: pointer; background: linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.08)); }
+.slide img { width: 100%; height: 340px; object-fit: cover; display: block; transition: transform 450ms, filter 450ms; }
+.slide .slide-caption { position: absolute; bottom: 14px; left: 16px; color: white; text-shadow: 0 6px 18px rgba(0,0,0,0.6); font-family: 'Playfair Display', serif; }
+.slide:not(.active) { transform: scale(0.92); filter: blur(3px) grayscale(.05); opacity: 0.84; }
+.slide.active { transform: scale(1); filter: blur(0) grayscale(0); opacity: 1; }
+.slide.prev, .slide.next { transform: scale(0.94); filter: blur(2px) brightness(0.95); }
+.slider-arrow { background: rgba(0,0,0,0.6); color: #fff; border: none; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; box-shadow: 0 10px 30px rgba(0,0,0,0.45); z-index: 10; transition: transform 0.2s; }
+.slider-arrow:hover { transform: scale(1.06); }
+.slider-dots { display:flex; gap:8px; justify-content:center; align-items:center; }
+.slider-dot { width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,0.4); cursor:pointer; transition: background 200ms, transform 200ms; }
+.slider-dot.active { background: #fff; transform: scale(1.15); }
+@media (max-width: 992px) {
+    .slide { flex: 0 0 60%; max-width: 60%; }
+    .slide img { height: 300px; }
+}
+@media (max-width: 576px) {
+    .slider-arrow { width:36px; height:36px; }
+    .slide { flex: 0 0 88%; max-width: 88%; }
+    .slide img { height: 220px; }
+}
+
+/* Animations */
+.fade-in,
+.fade-left,
+.fade-right,
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+}
+.show {
+    opacity: 1;
+    transform: translate(0);
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+    #feedback p {
+        font-size: 0.9rem;
+    }
+    #feedback .col-md-4 {
+        margin-bottom: 30px;
+    }
+}
+/* Luxury Modal */
+.luxury-modal {
+    background: #0e0e0e;
+    color: #f5f5f2;
+    border: none;
+}
+.luxury-modal .modal-header {
+    border-bottom: 1px solid #333;
+}
+.luxury-modal .modal-footer {
+    border-top: 1px solid #333;
+}
+.filter-btn {
+    background: transparent;
+    border: 1px solid #bfc3c7;
+    color: #f5f5f2;
+    padding: 8px 22px;
+    margin: 5px;
+    transition: 0.3s;
+}
+.filter-btn:hover, .filter-btn.active {
+    background: #f5f5f2;
+    color: #0e0e0e;
+}
+
+/* Search input in navbar */
+.search-input {
+    width: 220px;
+    max-width: 38vw;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 6px 12px;
+    border-color: white;
+    color: var(--ivory);
+}
+.search-input:focus {
+    background: rgba(0, 0, 0, 0.15);
+    color: white;
+}    
+.search-input::placeholder {
+    color: #999;
+}
+@media (max-width: 576px) {
+    .search-input { 
+        display: none; 
+    }
+}
+
+/* Cart badge tweak */
+#cartCount {
+    font-size: .65rem;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+
+/* Product image responsiveness */
+.product-card img {
+    height: 320px;
+    object-fit: cover;
+}
+@media (max-width: 576px) {
+    .product-card img { height: 220px; }
+}
+
+/* Product modal */
+.modal-body img { border-radius: 6px; box-shadow: 0 16px 40px var(--shadow-soft); }
+
+/* Cart items */
+#cartItemsList .list-group-item { 
+    background: transparent; 
+    border: 1px solid #222; 
+}
+.cart-item-qty { width: 70px; }
+
+/* Add toast */
+.add-toast {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    background: #111;
+    color: var(--ivory);
+    padding: 10px 16px;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    display: none;
+    z-index: 1055;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        background-color: white;
+        height: 55vh;
+    }
+    .hero>.container { 
+        height: 50vh;
+        padding-top: 100px; 
+    }
+    .hero> video {
+        height: 50vh;
+        margin-top: 65px;
+    }
+}

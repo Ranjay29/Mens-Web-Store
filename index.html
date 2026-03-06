@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENSTYLE</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">MENSTYLE</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#featured">Featured</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="#feedback">Feedbacks</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+            </ul>
+            <form class="d-flex ms-3 me-3" role="search">
+                <input id="productSearch" class="form-control form-control-sm search-input" type="search" placeholder="Search products...">
+            </form>
+            <button id="cartBtn" class="btn btn-outline-light position-relative" data-bs-toggle="modal" data-bs-target="#cartModal" aria-label="Open cart">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="badge bg-danger position-absolute top-0 start-100 translate-middle" id="cartCount">0</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Home -->
+<section id="home" class="hero">
+    <video autoplay muted loop><source src="./Home video.mp4"></video>
+    <div class="container text-center">
+        <h1 class="fade-in">Premium Men's Fashion</h1>
+        <p class="fade-in">Style that defines you</p>
+        <a href="#products" class="btn btn-dark">Shop Now</a>
+    </div>
+</section>
+
+<!-- Featured Slider -->
+<section id="featured" class="section slider-section">
+    <div class="container">
+        <h2 class="text-center mb-4">Featured Collection</h2>
+        <div class="slider" aria-roledescription="carousel">
+            <button class="slider-arrow prev" aria-label="Previous slide">&#10094;</button>
+            <div class="slider-track" role="listbox" aria-label="Featured products">
+                <div class="slide" data-index="0" tabindex="0" aria-selected="true">
+                    <img src="./CasualSlide.png" alt="Casual Shirt">
+                    <div class="slide-caption"><h5>Casual Shirts</h5></div>
+                </div>
+                <div class="slide" data-index="1" tabindex="0" aria-selected="false">
+                    <img src="./Formal.png" alt="Formal Suit">
+                    <div class="slide-caption"><h5>Formal Suits</h5></div>
+                </div>
+                <div class="slide" data-index="2" tabindex="0" aria-selected="false">
+                    <img src="./DenimSlide.png" alt="Denim Jacket">
+                    <div class="slide-caption"><h5>Denim Jackets</h5></div>
+                </div>
+                <div class="slide" data-index="3" tabindex="0" aria-selected="false">
+                    <img src="./Trousers.png" alt="Trousers">
+                    <div class="slide-caption"><h5>Slim Fit Trousers</h5></div>
+                </div>
+                <div class="slide" data-index="4" tabindex="0" aria-selected="false">
+                    <img src="./LeatherBelt.png" alt="Leather Belt">
+                    <div class="slide-caption"><h5>Leather Belts</h5></div>
+                </div>
+            </div>
+            <button class="slider-arrow next" aria-label="Next slide">&#10095;</button>
+        </div>
+        <div class="slider-dots mt-3 text-center" role="tablist" aria-label="Select slide"></div>
+    </div>
+</section>
+
+<!-- About -->
+<section id="about" class="section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 fade-left">
+                <img src="https://images.pexels.com/photos/3568518/pexels-photo-3568518.jpeg" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6 fade-right">
+                <h2>About Us</h2>
+                <p>
+                    We provide high-quality men's fashion including casual wear, formal wear, 
+                    and accessories designed for comfort and elegance.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Products -->
+<section id="products" class="section bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Products</h2>
+
+        <div class="text-center mb-4">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="shirt">Shirts</button>
+            <button class="filter-btn" data-filter="suit">Suits</button>
+            <button class="filter-btn" data-filter="jacket">Jackets</button>
+            <button class="filter-btn" data-filter="trousers">Trousers</button>
+            <button class="filter-btn" data-filter="accessory">Accessories</button>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4 col-sm-6 fade-up product shirt">
+                <div class="card product-card">
+                    <img src="./Casual.png" class="card-img-top" alt="Casual Shirt">
+                    <div class="card-body text-center">
+                        <h5>Casual Shirt</h5>
+                        <p class="price">₹999</p>
+                        <div class="d-flex gap-2 justify-content-center">
+                            <button class="btn btn-outline-light view-btn" data-name="Casual Shirt" data-price="999" data-desc="Comfortable casual shirt for everyday wear" data-img="./Casual.png">View</button>
+                            <button class="btn btn-outline-light add-cart" data-name="Casual Shirt" data-price="999">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 fade-up product suit">
+                <div class="card product-card">
+                    <img src="https://images.pexels.com/photos/5060820/pexels-photo-5060820.jpeg" class="card-img-top" alt="Formal Suit">
+                    <div class="card-body text-center">
+                        <h5>Formal Suit</h5>
+                        <p class="price">₹4999</p>
+                        <div class="d-flex gap-2 justify-content-center">
+                            <button class="btn btn-outline-light view-btn" data-name="Formal Suit" data-price="4999" data-desc="Elegant, bespoke-style formal suit" data-img="https://images.pexels.com/photos/5060820/pexels-photo-5060820.jpeg">View</button>
+                            <button class="btn btn-outline-light add-cart" data-name="Formal Suit" data-price="4999">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 fade-up product jacket">
+                <div class="card product-card">
+                    <img src="./Denim.png" class="card-img-top" alt="Denim Jacket">
+                    <div class="card-body text-center">
+                        <h5>Denim Jacket</h5>
+                        <p class="price">₹2999</p>
+                        <div class="d-flex gap-2 justify-content-center">
+                            <button class="btn btn-outline-light view-btn" data-name="Denim Jacket" data-price="2999" data-desc="Classic denim jacket with modern fit" data-img="./Denim.png">View</button>
+                            <button class="btn btn-outline-light add-cart" data-name="Denim Jacket" data-price="2999">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 fade-up product trousers">
+                <div class="card product-card">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20241215/kcWa/675eedaf0f47f80c87fd7fe6/-473Wx593H-700926401-white-MODEL.jpg" class="card-img-top" alt="Slim Fit Trousers">
+                    <div class="card-body text-center">
+                        <h5>Slim Fit Trousers</h5>
+                        <p class="price">₹1999</p>
+                        <div class="d-flex gap-2 justify-content-center">
+                            <button class="btn btn-outline-light view-btn" data-name="Slim Fit Trousers" data-price="1999" data-desc="Modern slim-fit trousers for smart casuals" data-img="https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg">View</button>
+                            <button class="btn btn-outline-light add-cart" data-name="Slim Fit Trousers" data-price="1999">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 fade-up product accessory">
+                <div class="card product-card">
+                    <img src="./Belt.png" class="card-img-top" alt="Leather Belt">
+                    <div class="card-body text-center">
+                        <h5>Leather Belt</h5>
+                        <p class="price">₹499</p>
+                        <div class="d-flex gap-2 justify-content-center">
+                            <button class="btn btn-outline-light view-btn" data-name="Leather Belt" data-price="499" data-desc="Genuine leather belt with classic buckle" data-img="./Belt.png">View</button>
+                            <button class="btn btn-outline-light add-cart" data-name="Leather Belt" data-price="499">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product Modal -->
+<div class="modal fade" id="productModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content luxury-modal">
+      <div class="modal-header">
+        <h5 class="modal-title" id="productModalTitle"></h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body d-flex flex-column flex-lg-row gap-3 align-items-center">
+        <img id="productModalImg" src="" alt="" class="img-fluid" style="max-width:350px; object-fit:cover;">
+        <div>
+          <h4 id="productModalPrice"></h4>
+          <p id="productModalDesc"></p>
+          <div class="d-flex gap-2 align-items-center">
+            <input id="productQty" type="number" min="1" value="1" class="form-control form-control-sm" style="width:80px;">
+            <button id="modalAddCart" class="btn btn-outline-light">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cart Modal (detailed) -->
+<div class="modal fade" id="cartModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-end modal-dialog-scrollable">
+    <div class="modal-content luxury-modal">
+      <div class="modal-header">
+        <h5 class="modal-title">Your Cart</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div id="cartItemsList" class="list-group"></div>
+        <div class="mt-3 d-flex justify-content-between align-items-center">
+          <strong>Total:</strong>
+          <h5 id="cartTotal">₹0</h5>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="checkoutBtn" class="btn btn-outline-light w-100">Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Toast -->
+<div id="addToast" class="add-toast">Added to cart</div>
+
+<!-- Feedback -->
+<section id="feedback" class="section">
+    <div class="container text-center">
+        <h2>Customer Feedbacks</h2>
+        <div class="row mt-4">
+            <div class="col-md-4 fade-up">
+                <p>"Excellent quality and fast delivery!"</p>
+                <strong>- Rahul</strong>
+            </div>
+            <div class="col-md-4 fade-up">
+                <p>"Trendy designs and perfect fitting."</p>
+                <strong>- Arjun</strong>
+            </div>
+            <div class="col-md-4 fade-up">
+                <p>"Affordable and stylish."</p>
+                <strong>- Karthik</strong>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section bg-dark text-light">
+    <div class="container">
+        <h2 class="text-left">Contact Us</h2>
+        <div class="row justify-content-left">
+            <div class="col-md-6">
+                <form>
+                    <input type="text" class="form-control mb-3" placeholder="Your Name">
+                    <input type="email" class="form-control mb-3" placeholder="Your Email">
+                    <textarea class="form-control mb-3" rows="4" placeholder="Message"></textarea>
+                    <button class="btn btn-light w-100">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center p-3">
+    © 2026 MENSTYLE | All Rights Reserved
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
